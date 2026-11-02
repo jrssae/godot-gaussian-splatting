@@ -5,8 +5,8 @@ extends SceneTree
 ## dictionaries). CPU backend only, so this runs headless in CI:
 ##   godot --headless --path . --script tests/collision_test.gd
 
-const PIPELINE := preload("res://addons/gdgs/collision/pipeline/collision_pipeline.gd")
-const SPLAT_SOURCE := preload("res://addons/gdgs/collision/pipeline/splat_source.gd")
+const PIPELINE := preload("res://addons/gdgs_scs/collision/pipeline/collision_pipeline.gd")
+const SPLAT_SOURCE := preload("res://addons/gdgs_scs/collision/pipeline/splat_source.gd")
 const VOXEL_SIZE := 0.05
 
 var _failures: PackedStringArray = []

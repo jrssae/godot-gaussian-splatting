@@ -25,7 +25,7 @@ func _initialize() -> void:
 	var angle: float = float(a[2]) if a.size() > 2 else 0.0
 
 	ProjectSettings.set_setting("gdgs/rendering/backend", "Compute" if backend == "compute" else "Raster")
-	load("res://addons/gdgs/runtime/render/backend/gaussian_backend_selector.gd").reset()
+	load("res://addons/gdgs_scs/runtime/render/backend/gaussian_backend_selector.gd").reset()
 
 	_vp = SubViewport.new()
 	_vp.size = Vector2i(640, 360)   # 16:9, non-square on purpose

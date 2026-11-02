@@ -112,7 +112,7 @@ After installation, the plugin root should be available at `res://addons/gdgs`.
 4. Assign the imported resource to the `gaussian` property of `GaussianSplatNode`.
 5. Add a `WorldEnvironment` node to the scene.
 6. Create a `Compositor` resource on `WorldEnvironment.compositor`.
-7. Add a `CompositorEffect` to that `Compositor`, and set its script to `res://addons/gdgs/runtime/compositor/gaussian_compositor_effect.gd`.
+7. Add a `CompositorEffect` to that `Compositor`, and set its script to `res://addons/gdgs_scs/runtime/compositor/gaussian_compositor_effect.gd`.
 8. Run the scene.
 
 ### Collision Generation
@@ -131,7 +131,7 @@ Options:
 
 Physics notes: the generated shape is a hollow triangle-mesh shell with `backface_collision` enabled. For small, fast-moving rigid bodies, enable `continuous_cd` on the body (or raise `physics_ticks_per_second`) to avoid tunneling through thin walls.
 
-The collision module is optional and fault-isolated: if `addons/gdgs/collision` is missing or fails to load, the plugin logs a warning and rendering is unaffected, so you can delete that folder for a rendering-only installation.
+The collision module is optional and fault-isolated: if `addons/gdgs_scs/collision` is missing or fails to load, the plugin logs a warning and rendering is unaffected, so you can delete that folder for a rendering-only installation.
 
 ### Relighting
 
@@ -194,7 +194,7 @@ Highlights of `3.2.0-beta`:
 
 These parameters belong to the **Compute** backend's compositor effect; the Raster backend has no depth-tuning parameters (occlusion is the hardware depth test).
 
-The compositor effect script is `res://addons/gdgs/runtime/compositor/gaussian_compositor_effect.gd`.
+The compositor effect script is `res://addons/gdgs_scs/runtime/compositor/gaussian_compositor_effect.gd`.
 
 - `alpha_cutoff`: Pixels with alpha below this threshold are ignored during final composition.
 - `depth_bias`: Small bias used when comparing GS depth against scene depth.
@@ -241,11 +241,11 @@ This importer is meant for Gaussian Splatting style assets, not generic point cl
 ## 0x08 Repository Layout
 
 - `addons/gdgs`: Plugin root in this repository.
-- `addons/gdgs/importers`: Import plugins, parsers, decoders, and resource builders.
-- `addons/gdgs/runtime`: Runtime nodes, resources, the backend seam (`render/backend`), the Compute backend (`render/compute` + `compositor` + `debug`), and the Raster backend (`render/raster`).
-- `addons/gdgs/editor`: Editor-only integrations such as gizmos.
-- `addons/gdgs/collision`: Optional editor-side collision generation (inspector UI, worker pipeline, voxelizer shader).
-- `addons/gdgs/lighting`: Optional editor-side lighting-proxy bake (inspector UI, worker bake pipeline). Bake-time only — shipped games relight from the baked resource without it.
+- `addons/gdgs_scs/importers`: Import plugins, parsers, decoders, and resource builders.
+- `addons/gdgs_scs/runtime`: Runtime nodes, resources, the backend seam (`render/backend`), the Compute backend (`render/compute` + `compositor` + `debug`), and the Raster backend (`render/raster`).
+- `addons/gdgs_scs/editor`: Editor-only integrations such as gizmos.
+- `addons/gdgs_scs/collision`: Optional editor-side collision generation (inspector UI, worker pipeline, voxelizer shader).
+- `addons/gdgs_scs/lighting`: Optional editor-side lighting-proxy bake (inspector UI, worker bake pipeline). Bake-time only — shipped games relight from the baked resource without it.
 - `docs`: All non-README documentation — Chinese README, changelog, contributing guide, architecture notes, and the rendering-backend comparison.
 - `samples`: The demo scene (`demo.tscn` + `demo.gd`), sample Gaussian assets, and media.
 - `tests`: Headless tests used by CI (smoke, collision pipeline, Raster sorter/data-texture, backend selector, lighting bake and light rig), plus the visual A/B harness and its minimal reference scene.

@@ -6,8 +6,8 @@ extends SceneTree
 ##
 ##   godot --headless --path . --script tests/raster_test.gd
 
-const Sorter := preload("res://addons/gdgs/runtime/render/raster/raster_sorter.gd")
-const DataTextures := preload("res://addons/gdgs/runtime/render/raster/raster_data_textures.gd")
+const Sorter := preload("res://addons/gdgs_scs/runtime/render/raster/raster_sorter.gd")
+const DataTextures := preload("res://addons/gdgs_scs/runtime/render/raster/raster_data_textures.gd")
 
 var _failures: PackedStringArray = []
 

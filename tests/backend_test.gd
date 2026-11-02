@@ -6,7 +6,7 @@ extends SceneTree
 ##
 ##   godot --headless --path . --script tests/backend_test.gd
 
-const Selector := preload("res://addons/gdgs/runtime/render/backend/gaussian_backend_selector.gd")
+const Selector := preload("res://addons/gdgs_scs/runtime/render/backend/gaussian_backend_selector.gd")
 
 const INTERFACE_METHODS := [
 	"attach_node", "detach_node", "notify_resource_changed",

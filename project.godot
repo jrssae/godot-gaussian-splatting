@@ -12,7 +12,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdgs/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdgs_scs/plugin.cfg")
 
 [rendering]
 

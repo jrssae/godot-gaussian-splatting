@@ -11,15 +11,15 @@ extends Node3D
 ## `demo.sog` is several megabytes and this repository keeps large binaries out
 ## of git. It is cached under `user://` afterwards, so only the first run waits.
 
-const SPLAT_NODE_SCRIPT := preload("res://addons/gdgs/runtime/nodes/gaussian_splat_node.gd")
-const LIGHTING_RESOURCE_SCRIPT := preload("res://addons/gdgs/runtime/resources/gaussian_lighting_resource.gd")
-const COMPOSITOR_EFFECT_SCRIPT := preload("res://addons/gdgs/runtime/compositor/gaussian_compositor_effect.gd")
+const SPLAT_NODE_SCRIPT := preload("res://addons/gdgs_scs/runtime/nodes/gaussian_splat_node.gd")
+const LIGHTING_RESOURCE_SCRIPT := preload("res://addons/gdgs_scs/runtime/resources/gaussian_lighting_resource.gd")
+const COMPOSITOR_EFFECT_SCRIPT := preload("res://addons/gdgs_scs/runtime/compositor/gaussian_compositor_effect.gd")
 const GAUSSIAN_PATH := "res://samples/assets/demo.sog"
 
 # The bake module is editor-side and optional, so it is loaded defensively;
 # without it the demo still runs, just unlit.
-const PIPELINE_PATH := "res://addons/gdgs/collision/pipeline/collision_pipeline.gd"
-const BAKE_JOB_PATH := "res://addons/gdgs/lighting/bake/bake_job.gd"
+const PIPELINE_PATH := "res://addons/gdgs_scs/collision/pipeline/collision_pipeline.gd"
+const BAKE_JOB_PATH := "res://addons/gdgs_scs/lighting/bake/bake_job.gd"
 
 const CACHE_PATH_TEMPLATE := "user://gdgs_demo_lighting_%d.res"
 const BAKE_SETTINGS := {
@@ -214,7 +214,7 @@ func _start_bake(gaussian: Resource) -> void:
 			return
 
 	if not ResourceLoader.exists(PIPELINE_PATH, "Script") or not ResourceLoader.exists(BAKE_JOB_PATH, "Script"):
-		_status = "Bake modules missing (addons/gdgs/collision + /lighting); rendering unlit"
+		_status = "Bake modules missing (addons/gdgs_scs/collision + /lighting); rendering unlit"
 		return
 
 	# create_snapshot() reads the Resource, so it must run here on the main

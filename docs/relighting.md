@@ -57,7 +57,7 @@ everything in code, which also makes it a worked example of the API.
    `lighting` property in a single undo/redo action.
 
 The bake runs on a background thread with a cancellable progress dialog. It
-needs the collision module (`addons/gdgs/collision`) for the voxelizer and
+needs the collision module (`addons/gdgs_scs/collision`) for the voxelizer and
 mesher; the bake UI stays disabled without it, but **already-baked resources
 still render**, so a shipped game never depends on it.
 
@@ -146,9 +146,9 @@ These are inherent to relighting baked radiance. No setting works around them.
 
 ## Fault isolation
 
-- Deleting `addons/gdgs/lighting/` removes only the bake UI. Baked resources
+- Deleting `addons/gdgs_scs/lighting/` removes only the bake UI. Baked resources
   keep rendering.
-- Deleting `addons/gdgs/runtime/lighting/` degrades every node to unlit with
+- Deleting `addons/gdgs_scs/runtime/lighting/` degrades every node to unlit with
   one warning.
 - Deleting either rendering backend leaves the other working, relighting
   included.

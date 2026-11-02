@@ -7,13 +7,13 @@ extends SceneTree
 ##
 ##   godot --headless --path . --script tests/lighting_test.gd
 
-const LightingResource := preload("res://addons/gdgs/runtime/resources/gaussian_lighting_resource.gd")
-const VoxelGrid := preload("res://addons/gdgs/collision/pipeline/voxel_grid.gd")
-const NormalField := preload("res://addons/gdgs/lighting/bake/normal_field.gd")
-const SplatTransfer := preload("res://addons/gdgs/lighting/bake/splat_transfer.gd")
-const ProxyBuilder := preload("res://addons/gdgs/lighting/bake/proxy_builder.gd")
-const LightRig := preload("res://addons/gdgs/runtime/lighting/gaussian_light_rig.gd")
-const RASTER_SHADER_PATH := "res://addons/gdgs/runtime/render/raster/materials/gaussian_raster.gdshader"
+const LightingResource := preload("res://addons/gdgs_scs/runtime/resources/gaussian_lighting_resource.gd")
+const VoxelGrid := preload("res://addons/gdgs_scs/collision/pipeline/voxel_grid.gd")
+const NormalField := preload("res://addons/gdgs_scs/lighting/bake/normal_field.gd")
+const SplatTransfer := preload("res://addons/gdgs_scs/lighting/bake/splat_transfer.gd")
+const ProxyBuilder := preload("res://addons/gdgs_scs/lighting/bake/proxy_builder.gd")
+const LightRig := preload("res://addons/gdgs_scs/runtime/lighting/gaussian_light_rig.gd")
+const RASTER_SHADER_PATH := "res://addons/gdgs_scs/runtime/render/raster/materials/gaussian_raster.gdshader"
 
 # A 32³ grid at 0.1 m voxels whose lower half in Y is solid, so the surface is
 # the plane y = 16 and the outward normal is +Y everywhere on it.

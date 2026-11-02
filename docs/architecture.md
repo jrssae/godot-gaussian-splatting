@@ -17,12 +17,12 @@ The repository now mirrors the plugin's shipping layout.
 
 ## Plugin Modules
 
-- `addons/gdgs/plugin.gd`: Editor plugin entry point.
-- `addons/gdgs/editor`: Editor-only integrations.
-- `addons/gdgs/importers`: Asset import pipeline.
-- `addons/gdgs/runtime`: Runtime-facing nodes, resources, compositor code, and rendering internals.
-- `addons/gdgs/collision`: Optional editor-side collision generation, loaded through a fault-isolating self-test.
-- `addons/gdgs/lighting`: Optional editor-side lighting-proxy bake, loaded the
+- `addons/gdgs_scs/plugin.gd`: Editor plugin entry point.
+- `addons/gdgs_scs/editor`: Editor-only integrations.
+- `addons/gdgs_scs/importers`: Asset import pipeline.
+- `addons/gdgs_scs/runtime`: Runtime-facing nodes, resources, compositor code, and rendering internals.
+- `addons/gdgs_scs/collision`: Optional editor-side collision generation, loaded through a fault-isolating self-test.
+- `addons/gdgs_scs/lighting`: Optional editor-side lighting-proxy bake, loaded the
   same way. Bake-time only: it depends on the collision module's voxelizer and
   mesher, but nothing under `runtime/` imports it, so a shipped game relights
   from a baked resource with either module deleted.

@@ -94,7 +94,7 @@
 4. 将导入后的资源赋值给 `GaussianSplatNode` 的 `gaussian` 属性。
 5. 在场景中添加一个 `WorldEnvironment` 节点。
 6. 在 `WorldEnvironment.compositor` 上创建一个 `Compositor` 资源。
-7. 在该 `Compositor` 中添加一个 `CompositorEffect`，并将脚本设为 `res://addons/gdgs/runtime/compositor/gaussian_compositor_effect.gd`。
+7. 在该 `Compositor` 中添加一个 `CompositorEffect`，并将脚本设为 `res://addons/gdgs_scs/runtime/compositor/gaussian_compositor_effect.gd`。
 8. 运行场景。
 
 ### 碰撞生成
@@ -113,7 +113,7 @@
 
 物理提示：生成的碰撞体是空心三角网格壳，已开启 `backface_collision`。对于体积小、速度快的刚体，请开启其 `continuous_cd`（或提高 `physics_ticks_per_second`），避免穿透薄壁。
 
-碰撞模块是可选且故障隔离的：如果 `addons/gdgs/collision` 缺失或加载失败，插件只会打印警告，渲染完全不受影响；需要纯渲染安装时可直接删除该目录。
+碰撞模块是可选且故障隔离的：如果 `addons/gdgs_scs/collision` 缺失或加载失败，插件只会打印警告，渲染完全不受影响；需要纯渲染安装时可直接删除该目录。
 
 ### 重新打光
 
@@ -176,7 +176,7 @@ splat 存的是辐射亮度而非材质：没有法线、没有反照率、没�
 
 以下参数属于 **Compute** 后端的 compositor effect；Raster 后端没有深度调参项（遮挡由硬件深度测试完成）。
 
-compositor effect 脚本位于 `res://addons/gdgs/runtime/compositor/gaussian_compositor_effect.gd`。
+compositor effect 脚本位于 `res://addons/gdgs_scs/runtime/compositor/gaussian_compositor_effect.gd`。
 
 - `alpha_cutoff`：Alpha 低于该阈值的像素会在最终合成时被忽略。
 - `depth_bias`：GS 深度与场景深度比较时使用的小偏移量。
@@ -223,11 +223,11 @@ compositor effect 脚本位于 `res://addons/gdgs/runtime/compositor/gaussian_co
 ## 0x08 仓库结构
 
 - `addons/gdgs`：插件根目录。
-- `addons/gdgs/importers`：导入插件、解析器、解码器和资源构建器。
-- `addons/gdgs/runtime`：运行时节点、资源、后端接缝（`render/backend`）、Compute 后端（`render/compute` + `compositor` + `debug`）与 Raster 后端（`render/raster`）。
-- `addons/gdgs/editor`：编辑器侧扩展，例如 gizmo。
-- `addons/gdgs/collision`：可选的编辑器内碰撞生成模块（Inspector UI、工作线程管线、体素化 shader）。
-- `addons/gdgs/lighting`：可选的编辑器内光照代理烘焙模块（Inspector UI、工作线程烘焙管线）。仅烘焙期需要——发布的游戏只靠烘焙好的资源即可重新打光。
+- `addons/gdgs_scs/importers`：导入插件、解析器、解码器和资源构建器。
+- `addons/gdgs_scs/runtime`：运行时节点、资源、后端接缝（`render/backend`）、Compute 后端（`render/compute` + `compositor` + `debug`）与 Raster 后端（`render/raster`）。
+- `addons/gdgs_scs/editor`：编辑器侧扩展，例如 gizmo。
+- `addons/gdgs_scs/collision`：可选的编辑器内碰撞生成模块（Inspector UI、工作线程管线、体素化 shader）。
+- `addons/gdgs_scs/lighting`：可选的编辑器内光照代理烘焙模块（Inspector UI、工作线程烘焙管线）。仅烘焙期需要——发布的游戏只靠烘焙好的资源即可重新打光。
 - `docs`：除英文 README 外的全部文档——中文 README、changelog、贡献指南、架构说明和渲染后端对比。
 - `samples`：演示场景（`demo.tscn` + `demo.gd`）、示例 Gaussian 资源和媒体文件。
 - `tests`：CI 使用的 headless 测试（冒烟、碰撞管线、Raster 排序器/数据纹理、后端选择器、光照烘焙与光源 rig），以及视觉 A/B 工具和它的极简参考场景。

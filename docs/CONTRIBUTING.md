@@ -15,7 +15,7 @@ The repository layout and render-stack module split are described in [architectu
 - Keep the plugin self-contained under `addons/gdgs`. Everything outside `addons/` is development-only and is excluded from Asset Library exports via `.gitattributes`.
 - The minimum supported Godot version is `4.3` — avoid APIs introduced after it, or guard them with `has_method` checks like the existing code does.
 - Match the existing GDScript style: tabs for indentation, typed declarations where practical, one focused module per file.
-- The collision module (`addons/gdgs/collision`) must stay optional: it is loaded through a fault-isolating self-test, and rendering must keep working if the folder is deleted.
+- The collision module (`addons/gdgs_scs/collision`) must stay optional: it is loaded through a fault-isolating self-test, and rendering must keep working if the folder is deleted.
 - Do not commit large binary assets. Sample assets beyond the small `demo.sog` are distributed through GitHub Releases.
 
 ## Before opening a PR
@@ -32,7 +32,7 @@ The repository layout and render-stack module split are described in [architectu
 
 ## Release process (maintainers)
 
-1. Bump `version` in `addons/gdgs/plugin.cfg`.
+1. Bump `version` in `addons/gdgs_scs/plugin.cfg`.
 2. Move the `[Unreleased]` items in [CHANGELOG.md](CHANGELOG.md) into a new `## [X.Y.Z] - YYYY-MM-DD` section.
 3. Commit and push, then tag that commit and push the tag:
 

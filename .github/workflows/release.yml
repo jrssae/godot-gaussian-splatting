@@ -16,8 +16,8 @@ jobs:
       - name: Verify tag matches plugin.cfg version
         run: |
           version="${GITHUB_REF_NAME#v}"
-          grep -q "version=\"${version}\"" addons/gdgs/plugin.cfg || {
-            echo "Tag ${GITHUB_REF_NAME} does not match the version in addons/gdgs/plugin.cfg"
+          grep -q "version=\"${version}\"" addons/gdgs_scs/plugin.cfg || {
+            echo "Tag ${GITHUB_REF_NAME} does not match the version in addons/gdgs_scs/plugin.cfg"
             exit 1
           }
 
