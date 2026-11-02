@@ -1,3 +1,14 @@
+> **This is a fork**, on the `space-combat-sim` branch. The plugin is the work of
+> [ReconWorldLab](https://github.com/ReconWorldLab/godot-gaussian-splatting), and all credit for it is theirs. Use their
+> repository if you want GDGS itself.
+>
+> This fork exists to customize the renderer for one project, [space-combat-sim](https://github.com/jrssae/space-combat-sim).
+> It is vibe coded, so it isn't intended or optimized for anyone else's use, but everyone is welcome to it if they want.
+>
+> The licence is upstream's MIT licence, unchanged ([LICENSE](LICENSE), copyright ReconWorldLab). The addon is renamed
+> `addons/gdgs_scs/`, and [its PATCHES.md](addons/gdgs_scs/PATCHES.md) lists every change from upstream's v3.3.0 and how to
+> revert it. Everything below this note is upstream's README, paths aside.
+
 # gdgs: Godot Gaussian Splatting
 
 Maintainer: ReconWorldLab
